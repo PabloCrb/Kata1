@@ -35,5 +35,14 @@ public class ChipBag {
         this.expirationDate = expirationDate;
     }
 
+    public int daysLeft() {
+        return (int) (expirationDate.toEpochDay() - LocalDate.now().toEpochDay());
+    }
 
+    public boolean isSpicy() {
+        if (scovilleUnits >= 2000) {
+            return true;
+        }
+        return false;
+    }
 }
